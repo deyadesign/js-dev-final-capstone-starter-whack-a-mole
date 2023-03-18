@@ -44,7 +44,7 @@ console.log(randomInteger(10, 200));
  */
 function setDelay(difficulty) {
   // TODO: Write your code here.
-  
+   
 }
 
 /**
@@ -96,17 +96,14 @@ console.log(hole.classList);
 * if the game is over.
 */
 
-if time > 0:
-   timeoutId = showUp()
-  return timeoutId
-  else
-  gameStopped = stopGame()
-  return gameStopped
-
-
 function gameOver() {
   // TODO: Write your code here
-  
+  if time > 0:{
+   let timeoutId = showUp()
+  return timeoutId;
+  } else {
+  let gameStopped = stopGame();
+  return gameStopped;
 }
 
 /**
@@ -119,8 +116,8 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = 0; // TODO: Update so that it uses setDelay()
-  const hole = 0;  // TODO: Update so that it use chooseHole()
+  let delay = setDelay("difficulty"); // TODO: Update so that it uses setDelay()
+  const hole = chooseHole(hole);  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
 }
 
@@ -143,10 +140,10 @@ function showAndHide(hole, delay){
 }
 
   const timeoutID = setTimeout(() => {
-    // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
+    // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.*/
     
     gameOver(){
-      // TODO: change the setTimeout delay to the one provided as a parameter
+      // TODO: change the setTimeout delay to the one provided as a parameter  */
        if(time > 0){
         let timeoutId = showUp();
       return timeoutID;
@@ -167,6 +164,7 @@ function toggleVisibility(hole){
   hole.classList.toggle('show');
   return hole;
 }
+  }
 
 showUp();
 
@@ -253,14 +251,14 @@ function whack(event) {
 * Adds the 'click' event listeners to the moles. See the instructions
 * for an example on how to set event listeners using a for loop.
 */
-function setEventListeners(){
+function setEventListeners() {
   // TODO: Write your code here
-  moles.forEach(
+  let moles.forEach(
     mole => mole.addEventListener('click', whack)
   );
   return moles;
 }
-
+}
 setEventListeners();
 
 /**
@@ -293,8 +291,8 @@ function stopGame(){
 *
 */
 function startGame(){
-  //setDuration(10);
-  //showUp();
+  setDuration(10);
+  showUp();
   return "game started";
 }
 
